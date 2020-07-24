@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { User } from '../autentificare/user'
 import { of } from 'rxjs';
-
+import { Router } from '@angular/router';
+@Injectable({ providedIn: 'root' })
 export class AutentificareServiceService {
   test=JSON.parse(localStorage.getItem('testObject'));
-  constructor() { console.log("asd",this.test)}
+  constructor(private router:Router) { console.log("asd",this.test)}
  
  // console.log(JSON.parse(localStorage.getItem('testObject')));
   userData:any =[
@@ -18,9 +19,9 @@ export class AutentificareServiceService {
     const user = this.test.find((x) => x.username === username)
     
     if(this.test.find((x)=>x.username==username && x.password==password)){
-      alert("Merge taica");
+      this.router.navigate(['/home']);
     }else{
-      alert("Nu merge taica");
+      alert("Credentiale incorecte ")
     }
   }
 }

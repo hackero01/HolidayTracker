@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AutentificareServiceService} from '../autentificare/autentificare-service.service';
+import { Router } from '@angular/router';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-autentificare',
@@ -8,8 +10,8 @@ import { AutentificareServiceService} from '../autentificare/autentificare-servi
   providers:[AutentificareServiceService]
 })
 export class AutentificareComponent implements OnInit {
-
-  constructor(private servLogin:AutentificareServiceService) { }
+a
+  constructor(private servLogin:AutentificareServiceService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +21,8 @@ export class AutentificareComponent implements OnInit {
     var username=event.target.elements[0].value;
     var password=event.target.elements[1].value;
     this.servLogin.checkLogin(username,password);
+    
+    
   }
 
 }
