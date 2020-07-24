@@ -2,7 +2,7 @@
     <!-- User name Definition -->
     <ng-container matColumnDef="username">
       <mat-header-cell *matHeaderCellDef> User name </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.username}} </mat-cell>
+      <mat-cell *matCellDef="let row;"> {{row.username}}</mat-cell>
     </ng-container>
   
     <!-- Age Definition -->
@@ -25,7 +25,7 @@
         <mat-cell *matCellDef="let row">
             
             <button (click)="edit(this)">Edit</button>
-            <button (click)="onRemove()">Cancel</button>
+            <button (click)="delete(row)">Cancel</button>
         </mat-cell>
     </ng-container>
     <!-- Header and Row Declarations -->

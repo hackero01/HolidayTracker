@@ -24,8 +24,8 @@ export class HomeComponentComponent implements OnInit {
   openDialog(){
     this.dialog.open(DialogAddContComponent)
   }
-  onRemove(){
-    this.dataSource.pop();
+  delete(i){
+    this.dataSource.splice(i,1);
   }
   createNew(event){
     alert("Vezi ca merge");
