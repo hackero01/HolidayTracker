@@ -7,15 +7,18 @@ import { User } from '../autentificare/user';
 export class HomeServService {
   
   test=JSON.parse(localStorage.getItem('testObject'));
+ // console.log(JSON.parse(localStorage.getItem('testObject')));
   userData:any =[
     {
       username:this.test.username,password:this.test.password,grup:this.test.grup
     }
   ]
 
-  constructor() { }
-  
-  createNew(event){
-    
+  constructor() {
+    console.log(JSON.parse(localStorage.getItem('testObject')));
+   }
+   onRemove(){
+    this.test.pop();
   }
+  
 }

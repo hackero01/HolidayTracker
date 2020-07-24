@@ -11,8 +11,8 @@ import { DialogAddContComponent } from '../dialog-add-cont/dialog-add-cont.compo
   providers:[HomeServService]
 })
 export class HomeComponentComponent implements OnInit {
-  userdata = this.homeServ.userData
-  dataSource = this.userdata
+ 
+  dataSource = JSON.parse(localStorage.getItem('testObject'))
   displayedColumns: string[] = ['username', 'password', 'grup','deleteAction'];
 
   constructor(private homeServ:HomeServService,public dialog:MatDialog) { }
@@ -22,7 +22,10 @@ export class HomeComponentComponent implements OnInit {
    // this.homeServ.displaydata();
   }
   openDialog(){
-    this.dialog.open(DialogAddContComponent);
+    this.dialog.open(DialogAddContComponent)
+  }
+  onRemove(){
+    this.dataSource.pop();
   }
   createNew(event){
     alert("Vezi ca merge");
