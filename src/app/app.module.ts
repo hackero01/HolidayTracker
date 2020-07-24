@@ -40,7 +40,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         component:RegisterComponent
       },
       {
-        path:'',
+        path:'home',
         component:HomeComponentComponent
       }
     ]),
