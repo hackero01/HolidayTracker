@@ -17,8 +17,6 @@ export class HomeServService {
   constructor() {
     console.log(JSON.parse(localStorage.getItem('testObject')));
    }
-   onRemove(){
-    this.test.pop();
-  }
+  
   
 }
