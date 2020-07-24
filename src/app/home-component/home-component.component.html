@@ -1,0 +1,38 @@
+<mat-table [dataSource]="dataSource">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> User name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.username}} </mat-cell>
+    </ng-container>
+  
+    <!-- Age Definition -->
+    <ng-container matColumnDef="parola">
+      <mat-header-cell *matHeaderCellDef> Parola </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.password}} </mat-cell>
+    </ng-container>
+  
+    <!-- Title Definition -->
+    <ng-container matColumnDef="grup">
+      <mat-header-cell *matHeaderCellDef> Grup </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.grup}} </mat-cell>
+    </ng-container>
+
+   
+    <ng-container matColumnDef="actionsColumn">
+        <mat-header-cell *matHeaderCellDef>
+            <button (click)="openDialog()">Create new</button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            
+            <button (click)="edit(this)">Edit</button>
+            <button (click)="openDialog()">Cancel</button>
+        </mat-cell>
+    </ng-container>
+    <!-- Header and Row Declarations -->
+    <mat-header-row *matHeaderRowDef="['username', 'parola', 'grup','actionsColumn']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['username', 'parola', 'grup','actionsColumn']"></mat-row>
+  </mat-table>
+
+    
+    
+   
