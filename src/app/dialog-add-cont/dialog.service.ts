@@ -4,13 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DialogService {
-  contNou; conturiNoi: any = [];
+  contNou; concediiNoi: any = [];
   constructor() { }
-  public register(username:string,password:string,grup:string){
+  public introduConcediul(nume:string,dataInceput:string,dataFinal:string,grup:string){
 
-    var testObject ={"username":username, "password":password,"grup":grup};
-    this.conturiNoi.push(testObject);
-    localStorage.setItem('testObject', JSON.stringify(this.conturiNoi));
+    var obiectConcediu ={"nume":nume, "dataInceput":dataInceput,"dataFinal":dataFinal,"grup":grup};
+    this.concediiNoi.push(obiectConcediu);
+    debugger;
+    localStorage.setItem('concedii', JSON.stringify(this.concediiNoi));
 
  }
 }

@@ -12,14 +12,14 @@ import { DialogAddContComponent } from '../dialog-add-cont/dialog-add-cont.compo
 })
 export class HomeComponentComponent implements OnInit {
  
-  dataSource = JSON.parse(localStorage.getItem('testObject'))
-  displayedColumns: string[] = ['username', 'password', 'grup','deleteAction'];
+  dataSource = JSON.parse(localStorage.getItem('concedii'))
+ 
 
   constructor(private homeServ:HomeServService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
     
-   // this.homeServ.displaydata();
+   console.log(this.dataSource)
   }
   openDialog(){
     this.dialog.open(DialogAddContComponent)

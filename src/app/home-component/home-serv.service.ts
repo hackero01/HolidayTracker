@@ -6,16 +6,16 @@ import { User } from '../autentificare/user';
 })
 export class HomeServService {
   
-  test=JSON.parse(localStorage.getItem('testObject'));
+  test=JSON.parse(localStorage.getItem('concedii'));
  // console.log(JSON.parse(localStorage.getItem('testObject')));
   userData:any =[
     {
-      username:this.test.username,password:this.test.password,grup:this.test.grup
+      nume:this.test.nume,dataInceput:this.test.dataInceput,dataFinal:this.test.dataFinal,grup:this.test.grup
     }
   ]
 
   constructor() {
-    console.log(JSON.parse(localStorage.getItem('testObject')));
+    console.log(JSON.parse(localStorage.getItem('concedii')));
    }
   
   

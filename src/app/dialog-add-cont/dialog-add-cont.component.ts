@@ -12,13 +12,16 @@ export class DialogAddContComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  iadatele(event){
+  introduConcediul(event){
     event.preventDefault();
     console.log(event);
-    var username=event.target.elements[0].value;
-    var password=event.target.elements[1].value;
-    var grup = event.target.elements[2].value;
-    this.dialogS.register(username,password,grup);
+    var nume=event.target.elements[0].value;
+    var dataInceput=event.target.elements[1].value;
+    var dataFinal = event.target.elements[2].value;
+    var grup = event.target.elements[3].value;
+    debugger;
+    this.dialogS.introduConcediul(nume,dataInceput,dataFinal,grup);
+    
    
   }
 }

@@ -19,6 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogAddContComponent } from './dialog-add-cont/dialog-add-cont.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatPaginatorModule,
     MatIconModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDatepickerModule
 
   ],
   providers: [],
