@@ -1,0 +1,21 @@
+
+        <form  fxLayoutAlign="stretch" fxLayout="column" (submit)="displayData($event)">
+            
+            <mat-form-field>
+                <input matInput [(ngModel)]="testObject.name" name="name" value="{{testObject.name}}" type="text" class="form-control" id="fname" placeholder="First Name">
+            </mat-form-field>
+           
+            <mat-form-field>
+                <input matInput [(ngModel)]="testObject.dataInceput" name="dataInceput" value="{{testObject.dataInceput}}" placeholder="Data inceput">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="testObject.dataFinal" name="dataFinal" value="{{testObject.dataFinal}}" placeholder="Data final">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="testObject.grup" name="grup" value="{{testObject.grup}}" placeholder="grup">
+            </mat-form-field>
+            <button >Introdu concediul</button>
+        </form>
+      
+
+   

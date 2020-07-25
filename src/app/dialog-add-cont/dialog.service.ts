@@ -10,7 +10,6 @@ export class DialogService {
 
     var obiectConcediu ={"nume":nume, "dataInceput":dataInceput,"dataFinal":dataFinal,"grup":grup};
     this.concediiNoi.push(obiectConcediu);
-    debugger;
     localStorage.setItem('concedii', JSON.stringify(this.concediiNoi));
 
  }

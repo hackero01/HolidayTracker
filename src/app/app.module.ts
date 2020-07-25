@@ -20,16 +20,18 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogAddContComponent } from './dialog-add-cont/dialog-add-cont.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     AutentificareComponent,
     RegisterComponent,
     HomeComponentComponent,
-    DialogAddContComponent
+    DialogAddContComponent,
+    DialogEditUserComponent
   ],
-  entryComponents: [DialogAddContComponent],
+  entryComponents: [DialogAddContComponent,DialogEditUserComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
@@ -58,7 +60,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatIconModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    FormsModule
 
   ],
   providers: [],

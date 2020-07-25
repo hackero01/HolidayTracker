@@ -29,8 +29,8 @@
     </mat-header-cell>
     <mat-cell *matCellDef="let row">
 
-      <button (click)="edit(this)">Edit</button>
-      <button (click)="delete(row)">Cancel</button>
+      <button (click)="edit(this.row)">Edit</button>
+      <button (click)="delete(this.row)">Cancel</button>
     </mat-cell>
   </ng-container>
   <!-- Header and Row Declarations -->

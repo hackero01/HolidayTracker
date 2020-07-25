@@ -8,12 +8,16 @@ export class HomeServService {
   
   test=JSON.parse(localStorage.getItem('concedii'));
  // console.log(JSON.parse(localStorage.getItem('testObject')));
-  userData:any =[
+  concedii:any =[
     {
       nume:this.test.nume,dataInceput:this.test.dataInceput,dataFinal:this.test.dataFinal,grup:this.test.grup
     }
   ]
-
+  conc:any =[
+    {
+      nume:this.test.nume,dataInceput:this.test.dataInceput,dataFinal:this.test.dataFinal,grup:this.test.grup
+    }
+  ]
   constructor() {
     console.log(JSON.parse(localStorage.getItem('concedii')));
    }
