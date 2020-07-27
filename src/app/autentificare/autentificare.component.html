@@ -1,16 +1,22 @@
+<div class="image">
 <div fxLayoutAlign="center center" fxFlexFill>
     <mat-card fxFlex="25">
         <form  fxLayoutAlign="stretch" fxLayout="column" (submit)="loginUser($event)">
-            <mat-form-field>
-                <input matInput placeholder="username">
-            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Username">
+                
+              </mat-form-field>
             
-            <mat-form-field>
-                <input matInput type="password" placeholder="password">
-            </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password"  placeholder="Password">
+              </mat-form-field>
             <button mat-button type="submit">Login</button>
+            <div class="mesaj-eroare" *ngIf="value==false">{{mesajEroare}}</div>
         </form>
-      
+       
 
     </mat-card>
+</div>
 </div>

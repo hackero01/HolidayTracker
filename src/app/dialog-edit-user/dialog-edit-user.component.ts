@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { EditUserService } from './edit-user.service';
-
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {Concedii} from '../autentificare/concedii'
 @Component({
   selector: 'app-dialog-edit-user',
   templateUrl: './dialog-edit-user.component.html',
@@ -8,24 +9,16 @@ import { EditUserService } from './edit-user.service';
   providers:[EditUserService]
 })
 export class DialogEditUserComponent implements OnInit {
-  nume = localStorage.getItem('numeL');
-  dataInceput=localStorage.getItem('dataIL');
-  dataFinal=localStorage.getItem('dataFL');
-  grup=localStorage.getItem('grupL');
+ 
   
-   testObject ={"name":this.nume,"dataInceput":this.dataInceput,"dataFinal":this.dataFinal,"grup":this.grup};
+  
   ngOnInit(): void {
-    
-    console.log(this.testObject)
+    console.log(this.data);
    }
-  constructor(private editUser:EditUserService) { }
+  constructor(private editUser:EditUserService,@Inject(MAT_DIALOG_DATA) public data: Concedii) { }
  
   
  
-  displayData(event){
-    var name=JSON.parse(JSON.stringify(event.name))
-    debugger;
-    
-  }
+  
 
 }

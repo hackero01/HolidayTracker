@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 export class AutentificareServiceService {
   test=JSON.parse(localStorage.getItem('testObject'));
   constructor(private router:Router) { console.log("asd",this.test)}
- 
+  isLogged:boolean;errorMessage:string;
  // console.log(JSON.parse(localStorage.getItem('testObject')));
   userData:any =[
     {
@@ -20,8 +20,16 @@ export class AutentificareServiceService {
     
     if(this.test.find((x)=>x.username==username && x.password==password)){
       this.router.navigate(['/home']);
+      this.isLogged=true;
     }else{
-      alert("Credentiale incorecte ")
+       this.isLogged=false;
+       this.errorMessage="Credentiale incorecte";
     }
+  }
+  public getErrorMessage(isLogged) {
+     if(this.isLogged=false)
+     return this.errorMessage;
+     
+    
   }
 }

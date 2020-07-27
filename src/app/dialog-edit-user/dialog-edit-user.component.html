@@ -1,21 +1,16 @@
-
-        <form  fxLayoutAlign="stretch" fxLayout="column" (submit)="displayData($event)">
+<form  fxLayoutAlign="stretch" fxLayout="column">
             
-            <mat-form-field>
-                <input matInput [(ngModel)]="testObject.name" name="name" value="{{testObject.name}}" type="text" class="form-control" id="fname" placeholder="First Name">
-            </mat-form-field>
-           
-            <mat-form-field>
-                <input matInput [(ngModel)]="testObject.dataInceput" name="dataInceput" value="{{testObject.dataInceput}}" placeholder="Data inceput">
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput [(ngModel)]="testObject.dataFinal" name="dataFinal" value="{{testObject.dataFinal}}" placeholder="Data final">
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput [(ngModel)]="testObject.grup" name="grup" value="{{testObject.grup}}" placeholder="grup">
-            </mat-form-field>
-            <button >Introdu concediul</button>
-        </form>
-      
-
-   
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.nume"  value="{{data.nume}}" name="nume" type="text" class="form-control" id="name" placeholder="Nume">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.dataInceput"  value="{{data.dataInceput}}" name="dataInceput" type="text" class="form-control" id="dataInceput" placeholder="Data inceput">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.dataFinal" value="{{data.dataFinal}}" name="dataFinal" type="text" class="form-control" id="dataFinal" placeholder="Data final">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.grup"value="{{data.grup}}" name="grup" type="text" class="form-control" id="grup" placeholder="Grup">
+    </mat-form-field>
+    <button >Introdu concediul</button>
+</form>

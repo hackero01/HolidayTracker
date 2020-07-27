@@ -1,39 +1,53 @@
-<mat-table [dataSource]="dataSource">
-  <!-- User name Definition -->
-  <ng-container matColumnDef="nume">
-    <mat-header-cell *matHeaderCellDef> Nume </mat-header-cell>
-    <mat-cell *matCellDef="let row;"> {{row.nume}}</mat-cell>
-  </ng-container>
+<mat-toolbar color="warn">
+  <span>HolidayTracker</span>
+ 
+    
+</mat-toolbar>
+<div class="main-div">
+  
+<mat-card >
+  <mat-card-title> Concedii existente </mat-card-title>
+  <mat-table [dataSource]="elementeTabel">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="nume">
+      <mat-header-cell *matHeaderCellDef> Nume </mat-header-cell>
+      <mat-cell *matCellDef="let row;"> {{row.nume}}</mat-cell>
+    </ng-container>
 
-  <!-- Age Definition -->
-  <ng-container matColumnDef="dataInceput">
-    <mat-header-cell *matHeaderCellDef> Data Inceput </mat-header-cell>
-    <mat-cell *matCellDef="let row;"> {{row.dataInceput}}</mat-cell>
-  </ng-container>
+    <!-- Age Definition -->
+    <ng-container matColumnDef="dataInceput">
+      <mat-header-cell *matHeaderCellDef> Data Inceput </mat-header-cell>
+      <mat-cell *matCellDef="let row;"> {{row.dataInceput}}</mat-cell>
+    </ng-container>
 
-  <!-- Title Definition -->
-  <ng-container matColumnDef="dataFinal">
-    <mat-header-cell *matHeaderCellDef> Data Final </mat-header-cell>
-    <mat-cell *matCellDef="let row;"> {{row.dataFinal}}</mat-cell>
-  </ng-container>
-  <!-- Title Definition -->
-  <ng-container matColumnDef="grup">
-    <mat-header-cell *matHeaderCellDef> Grup </mat-header-cell>
-    <mat-cell *matCellDef="let row;"> {{row.grup}}</mat-cell>
-  </ng-container>
+    <!-- Title Definition -->
+    <ng-container matColumnDef="dataFinal">
+      <mat-header-cell *matHeaderCellDef> Data Final </mat-header-cell>
+      <mat-cell *matCellDef="let row;"> {{row.dataFinal}}</mat-cell>
+    </ng-container>
+    <!-- Title Definition -->
+    <ng-container matColumnDef="grup">
+      <mat-header-cell *matHeaderCellDef> Grup </mat-header-cell>
+      <mat-cell *matCellDef="let row;"> {{row.grup}}</mat-cell>
+    </ng-container>
 
 
-  <ng-container matColumnDef="actionsColumn">
-    <mat-header-cell *matHeaderCellDef>
-      <button (click)="openDialog()">Create new</button>
-    </mat-header-cell>
-    <mat-cell *matCellDef="let row">
+    <ng-container matColumnDef="actionsColumn">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-raised-button class="mat-button-adauga" (click)="openDialog()">+</button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
 
-      <button (click)="edit(this.row)">Edit</button>
-      <button (click)="delete(this.row)">Cancel</button>
-    </mat-cell>
-  </ng-container>
-  <!-- Header and Row Declarations -->
-  <mat-header-row *matHeaderRowDef="['nume', 'dataInceput','dataFinal', 'grup','actionsColumn']"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: ['nume', 'dataInceput', 'dataFinal','grup','actionsColumn']"></mat-row>
-</mat-table>
+
+        <button mat-raised-button color="primary" (click)="edit(this.row)">Edit</button>
+<div class="divider"></div>
+        <button mat-raised-button color="warn" (click)="delete(this.row)">Delete</button>
+
+      </mat-cell>
+    </ng-container>
+    <!-- Header and Row Declarations -->
+    <mat-header-row *matHeaderRowDef="['nume', 'dataInceput','dataFinal', 'grup','actionsColumn']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['nume', 'dataInceput', 'dataFinal','grup','actionsColumn']"></mat-row>
+  </mat-table>
+</mat-card>
+</div>
