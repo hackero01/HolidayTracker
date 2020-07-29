@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatNativeDateModule} from '@angular/material/core';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -75,11 +76,15 @@ import {MatMenuModule} from '@angular/material/menu';
     ToolbarModule,
     AccordionModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatNativeDateModule
     
     
   ],
-  providers: [],
+  providers: [  
+    MatDatepickerModule,  
+  ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,6 +8,10 @@
 <mat-card >
   <mat-card-title> Concedii existente </mat-card-title>
   <mat-table [dataSource]="elementeTabel">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Nume </mat-header-cell>
+      <mat-cell *matCellDef="let row;let i = index;"> {{i}}</mat-cell>
+    </ng-container>
     <!-- User name Definition -->
     <ng-container matColumnDef="nume">
       <mat-header-cell *matHeaderCellDef> Nume </mat-header-cell>
@@ -30,7 +34,7 @@
       <mat-header-cell *matHeaderCellDef> Grup </mat-header-cell>
       <mat-cell *matCellDef="let row;"> {{row.grup}}</mat-cell>
     </ng-container>
-
+    
 
     <ng-container matColumnDef="actionsColumn">
       <mat-header-cell *matHeaderCellDef>
@@ -46,8 +50,8 @@
       </mat-cell>
     </ng-container>
     <!-- Header and Row Declarations -->
-    <mat-header-row *matHeaderRowDef="['nume', 'dataInceput','dataFinal', 'grup','actionsColumn']"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: ['nume', 'dataInceput', 'dataFinal','grup','actionsColumn']"></mat-row>
+    <mat-header-row *matHeaderRowDef="['id','nume', 'dataInceput','dataFinal', 'grup','actionsColumn']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id','nume', 'dataInceput', 'dataFinal','grup','actionsColumn']"></mat-row>
   </mat-table>
 </mat-card>
 </div>

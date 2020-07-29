@@ -1,12 +1,13 @@
 export class Concedii{
-    public dataInceput:Date;
-    public dataFinal:Date;
+    public dataInceput:any;
+    public dataFinal:any;
     public nume:string;
     public grup:string;
-    constructor(dataInceput:Date, dataFinal:Date,nume:string,grup:string){
+    constructor(nume:string,dataInceput:any,dataFinal:any,grup:string){
+        
+        this.nume=nume;
         this.dataInceput=dataInceput;
         this.dataFinal=dataFinal;
-        this.nume=nume;
         this.grup=grup;
     }
 }
