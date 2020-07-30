@@ -31,9 +31,9 @@ export class HomeComponentComponent implements OnInit {
     this.dialog.open(DialogAddContComponent)
   }
   delete(row){
-    const da=this.elementeTabel.filter(item => item.nume !== row.nume)
-     localStorage.setItem("concedii",JSON.stringify(da));
-    this.elementeTabel=JSON.parse(JSON.stringify(da));// this line is to refresh view and detect changes for updating table view
+    const stergeRand=this.elementeTabel.filter(item => item.nume !== row.nume)
+     localStorage.setItem("concedii",JSON.stringify(stergeRand));
+    this.elementeTabel=JSON.parse(JSON.stringify(stergeRand));// this line is to refresh view and detect changes for updating table view
     
 
   }
