@@ -1,7 +1,7 @@
-<form  fxLayoutAlign="stretch" fxLayout="column">
+<form  fxLayoutAlign="stretch" fxLayout="column"(submit)="editHoliday($event)">
             
     <mat-form-field>
-        <input matInput [(ngModel)]="data.nume"  value="{{data.nume}}" name="nume" type="text" class="form-control" id="name" placeholder="Nume">
+        <input matInput [(ngModel)]="data.nume"  value="{{data.nume}}" name="nume" type="text" class="form-control" id="name" placeholder="Nume" disabled>
     </mat-form-field>
     <mat-form-field>
         <input matInput [(ngModel)]="data.dataInceput"  value="{{data.dataInceput}}" name="dataInceput" type="text" class="form-control" id="dataInceput" placeholder="Data inceput">
@@ -10,7 +10,7 @@
         <input matInput [(ngModel)]="data.dataFinal" value="{{data.dataFinal}}" name="dataFinal" type="text" class="form-control" id="dataFinal" placeholder="Data final">
     </mat-form-field>
     <mat-form-field>
-        <input matInput [(ngModel)]="data.grup"value="{{data.grup}}" name="grup" type="text" class="form-control" id="grup" placeholder="Grup">
+        <input matInput [(ngModel)]="data.grup"value="{{data.grup}}" name="grup" type="text" class="form-control" id="grup" placeholder="Grup"disabled>
     </mat-form-field>
    
     <button >Modifica concediul</button>

@@ -6,6 +6,7 @@ import { DialogAddContComponent } from '../dialog-add-cont/dialog-add-cont.compo
 import {EditUserService} from '../dialog-edit-user/edit-user.service'
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 import { MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-home-component',
@@ -15,9 +16,10 @@ import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class HomeComponentComponent implements OnInit {
  
-  elementeTabel = JSON.parse(localStorage.getItem('concedii'))
- 
+  elementeTabel:any  = JSON.parse(localStorage.getItem('concedii'))
+  
   name:string
+ 
   
   constructor(private homeServ:HomeServService,private editServ:EditUserService,public dialog:MatDialog) { }
 
@@ -28,11 +30,11 @@ export class HomeComponentComponent implements OnInit {
   openDialog(){
     this.dialog.open(DialogAddContComponent)
   }
-  delete(i){
-    this.elementeTabel.splice(i,1);
-  
-    this.elementeTabel=JSON.parse(JSON.stringify(this.elementeTabel));// this line is to refresh view and detect changes for updating table view
-
+  delete(row){
+    const da=this.elementeTabel.filter(item => item.nume !== row.nume)
+     localStorage.setItem("concedii",JSON.stringify(da));
+    this.elementeTabel=JSON.parse(JSON.stringify(da));// this line is to refresh view and detect changes for updating table view
+    
 
   }
   formatDate(date) {
